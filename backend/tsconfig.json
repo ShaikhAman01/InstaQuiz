@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+      "target": "ESNext",
+      "module": "NodeNext",
+      "lib": ["esnext", "dom"],
+      "strict": true,
+      "esModuleInterop": true,
+      "skipLibCheck": true,
+      "outDir": "./dist",
+      "rootDir": "./src",
+      "moduleResolution": "nodenext",
+      "resolveJsonModule": true,
+      "declaration": false,
+      "sourceMap": true,
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "strictNullChecks": true,
+      "experimentalDecorators": true,
+      "emitDecoratorMetadata": true,
+      "verbatimModuleSyntax": true
+
+    },
+    "include": ["src/**/*"]
+  }
