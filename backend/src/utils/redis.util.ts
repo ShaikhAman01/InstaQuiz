@@ -1,7 +1,6 @@
-// src/utils/redis.ts or wherever you keep it
-
 import { createClient } from 'redis';
 import dotenv from 'dotenv';
+import { de } from 'zod/v4/locales';
 
 dotenv.config();
 

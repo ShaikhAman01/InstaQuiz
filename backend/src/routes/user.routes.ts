@@ -1,7 +1,6 @@
 import { type FastifyPluginAsync } from 'fastify'
-import { PrismaClient } from '@prisma/client'
+import { prisma } from '../lib/prisma.js';
 
-const prisma = new PrismaClient()
 
 export const userRoutes: FastifyPluginAsync = async (server) => {
   // POST /api/users

@@ -46,6 +46,7 @@ model Room {
 model Player {
   id        String    @id @default(uuid())
   nickname  String
+  avatar    String?
   roomId    String    
   room      Room      @relation(name: "RoomPlayers", fields: [roomId], references: [id])
   score     Int       @default(0)

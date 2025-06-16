@@ -21,13 +21,15 @@
     "fastify-plugin": "^5.0.1",
     "fastify-socket.io": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "nanoid": "^5.1.5",
     "prisma": "^6.8.2",
     "redis": "^5.1.0",
     "socket.io": "^4.8.1",
     "socket.io-client": "^4.8.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3",
-    "uuid": "^11.1.0"
+    "uuid": "^11.1.0",
+    "zod": "^3.25.64"
   },
   "description": "",
   "devDependencies": {

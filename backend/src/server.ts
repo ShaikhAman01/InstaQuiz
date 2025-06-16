@@ -18,7 +18,7 @@ await server.register(fastifySocketIO as unknown as FastifyPluginAsync);
 await server.register(roomRoutes, { prefix: '/api' })
 await server.register(quizRoutes, { prefix: '/api' })
 await server.register(userRoutes, { prefix: '/api' })
-await server.register(userRoutes, { prefix: '/api' })
+
 
 server.ready().then(() => {
   quizSocket(server)

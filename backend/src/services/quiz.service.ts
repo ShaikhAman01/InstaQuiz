@@ -1,6 +1,5 @@
-import { PrismaClient } from '@prisma/client'
+import { prisma } from "../lib/prisma.js";
 
-const prisma = new PrismaClient()
 
 export async function createQuiz(title: string, ) {
   return await prisma.quiz.create({

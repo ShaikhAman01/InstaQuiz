@@ -1,6 +1,6 @@
-import { PrismaClient } from '@prisma/client'
-
-const prisma = new PrismaClient()
+import { prisma } from "../lib/prisma.js";
+import { v4 as uuidv4 } from 'uuid'
+import { nanoid } from 'nanoid'
 
 export async function createRoom(hostId: string) {
     const host = await prisma.user.findUnique({
@@ -16,7 +16,8 @@ export async function createRoom(hostId: string) {
       hostId,
       players: {
         create: {
-          nickname: 'Host',
+          nickname: generateRandomNickname(),
+          avatar: generateRandomProfilePic(),
           score: 0
         }
       }
@@ -26,5 +27,15 @@ export async function createRoom(hostId: string) {
 }
 
 function generateUniqueRoomId(): string {
-  return Math.random().toString(36).substring(2, 8).toUpperCase()
-} 
+  return uuidv4().substring(0, 6).toUpperCase()
+}
+
+function generateRandomNickname(): string {
+  const adjectives = ['Brave', 'Clever', 'Energetic', 'Fierce', 'Gentle', 'Happy']
+  const nouns = ['Lion', 'Tiger', 'Bear', 'Wolf', 'Dragon', 'Phoenix']
+  return `${adjectives[Math.floor(Math.random() * adjectives.length)]} ${nouns[Math.floor(Math.random() * nouns.length)]}`
+}
+
+function generateRandomProfilePic(): string {
+  return `https://source.unsplash.com/random/100x100/?${nanoid(5)}`
+}

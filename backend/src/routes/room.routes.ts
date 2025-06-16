@@ -5,7 +5,7 @@ import { prisma } from '../lib/prisma.js';
 
 const roomRoutes: FastifyPluginAsync = async (server) => {
   // Create room (admin only)
-  server.post('/rooms', { preValidation: [verifyAuth] }, async (request, reply) => {
+  server.post('/rooms', async (request, reply) => {
     const { hostId } = request.body as { hostId: string }
     const roomId = await createRoom(hostId)
     reply.send({ roomId })
